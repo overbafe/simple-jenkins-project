@@ -19,8 +19,7 @@ pipeline {
                 script {
                     sh 'docker stop architecture_container || true'
                     sh 'docker rm architecture_container || true'
-                    sh "docker run -d --name architecture_container -p 8081:8080
-architecture_image:${env.BUILD_ID}"
+                    sh "docker run -d --name architecture_container -p 8081:8080 architecture_image:${env.BUILD_ID}"
                 }
             }
         }
